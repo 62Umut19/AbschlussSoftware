@@ -1,7 +1,7 @@
 const mysql = require('mysql')
 var fs = require('fs')
 
-var passwort = fs.readFileSync("U:\\DbPw.txt").toString();
+var passwort = fs.readFileSync("U:\\AbschlussSoftwareDaten\\DbPw.txt").toString();
 
 const connection = mysql.createConnection({
     host: 'localhost',

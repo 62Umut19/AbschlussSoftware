@@ -13,8 +13,10 @@ const PORT = process.env.PORT || 3000
 app.use(bodyParser.json())
 app.use(cors())
 
-const router = require('./routes/router.js')
-app.use('/api', router)
+app.use('/api', require('./routes/LoginRouter.js'))
+app.use('/api', require('./routes/CreateRouter.js'))
+app.use('/api', require('./routes/GetRouter.js'))
+app.use('/api', require('./routes/SetRouter.js'))
 
 // () => is a callback function
 app.listen(PORT , () => console.log(`Server is running on Port ${PORT}`))
