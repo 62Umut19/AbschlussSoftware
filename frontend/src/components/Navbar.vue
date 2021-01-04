@@ -128,21 +128,52 @@ export default {
       linksLehrerAdmin: [
         { icon: "mdi-home", text: "Home", route: "/" },
         {
+          icon: "mdi-login",
+          text: "Meine Termine",
+          route: "/MeineTermineLehrer",
+        },
+        {
           icon: "mdi-calendar",
           text: "Termine erstellen",
           route: "/TermineErstellen",
         },
+        { icon: "mdi-book", text: "Bücher Erstellung", route: "/BuecherErstellung" },
       ],
-      linksLehrerBuchAdmin: [{ icon: "mdi-home", text: "Home", route: "/" }],
+      linksLehrerBuchAdmin: [
+        { icon: "mdi-home", text: "Home", route: "/" },
+        {
+          icon: "mdi-login",
+          text: "Meine Termine",
+          route: "/MeineTermineLehrer",
+        },
+        { icon: "mdi-book", text: "Bücher Erstellung", route: "/BuecherErstellung" },
+      ],
       linksSchueler: [
         { icon: "mdi-home", text: "Home", route: "/" },
+        {
+          icon: "mdi-login",
+          text: "Meine Termine",
+          route: "/MeineTermineSchueler",
+        },
         {
           icon: "mdi-calendar",
           text: "Termin reservieren",
           route: "/TermineReservierenSchueler",
         },
+        {
+          icon: "mdi-emoticon-sick-outline",
+          text: "Krankschreiben",
+          route: "/Krankschreibung",
+        },
       ],
-      linksLehrer: [{ icon: "mdi-home", text: "Home", route: "/" }],
+      linksLehrer: [
+        { icon: "mdi-home", text: "Home", route: "/" },
+        {
+          icon: "mdi-login",
+          text: "Meine Termine",
+          route: "/MeineTermineLehrer",
+        },
+      ],
       linksUnautorisiert: [
         { icon: "mdi-home", text: "Home", route: "/" },
         { icon: "mdi-login-variant", text: "Einloggen", route: "/Login" },

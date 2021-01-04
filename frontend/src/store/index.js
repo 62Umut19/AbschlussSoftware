@@ -41,12 +41,6 @@ export default new Vuex.Store({
     getLehrer: state =>{
       return state.lehrer
     },
-    getLehrerBuchAdmin: state =>{
-      return state.lehrerBuchAdmin
-    },
-    getLehrerAdmin: state =>{
-      return state.lehrerAdmin
-    }
   },
   mutations: {
     SET_TOKENSCHUELER: (state, token) => {
@@ -64,14 +58,8 @@ export default new Vuex.Store({
     SET_TOKENLEHRERBUCHADMIN: (state, token) => {
       state.tokenLehrerBuchAdmin = token
     },
-    SET_LEHRERBUCHADMIN: (state, lehrer) => {
-      state.lehrerBuchAdmin = lehrer
-    },
     SET_TOKENLEHRERADMIN: (state, token) => {
       state.tokenLehrerAdmin = token
-    },
-    SET_LEHRERADMIN: (state, lehrer) => {
-      state.lehrerAdmin = lehrer
     },
     RESET: state => {
       Object.assign(state, getDefaultState())
@@ -92,13 +80,13 @@ export default new Vuex.Store({
     },
     loginLehrerBuchAdmin: ({commit}, {token, lehrer}) => {
       commit('SET_TOKENLEHRERBUCHADMIN', token)
-      commit('SET_LEHRERBUCHADMIN', lehrer)
+      commit('SET_LEHRER', lehrer)
 
       Axois.defaults.headers.common['Authorization'] = `Bearer ${token}`
     },
     loginLehrerAdmin: ({commit}, {token, lehrer}) => {
       commit('SET_TOKENLEHRERADMIN', token)
-      commit('SET_LEHRERADMIN', lehrer)
+      commit('SET_LEHRER', lehrer)
 
       Axois.defaults.headers.common['Authorization'] = `Bearer ${token}`
     },

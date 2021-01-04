@@ -1,5 +1,25 @@
 <template>
   <v-container fluid fill-height>
+    <div>
+      <v-snackbar v-model="snackbarErf" multi-line="true" color="primary" timeout="5000">
+        {{msg}}
+        <template>
+          <v-btn color="white" text @click="snackbarErf = false" class="ml4">
+            <v-icon right>mdi-window-close</v-icon>
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </div>
+    <div>
+      <v-snackbar v-model="snackbarErr" multi-line="true" color="error" timeout="5000">
+        {{msg}}
+        <template>
+          <v-btn color="white" text @click="snackbarErr = false" class="ml4">
+            <v-icon right>mdi-window-close</v-icon>
+          </v-btn>
+        </template>
+      </v-snackbar>
+    </div>
     <v-layout align-center justify-center>
       <v-flex xs12 sm10 md8 lg6 xl4>
         <v-form ref="form">
@@ -54,7 +74,9 @@ export default {
       fehler: false,
       benutzername: "",
       passwort: "",
-      msg: "asd",
+      msg: "",
+      snackbarErf: false,
+      snackbarErr: false,
     },
 
     rules: {
@@ -103,8 +125,8 @@ export default {
 
             this.$router.push("/");
           } catch (err){
-            this.msg = err.data.response.msg
-            this.msg = "Yarrak"
+            this.msg = "Ihr Benutzername oder Passwort ist Falsch. Bitte versuchen Sie es erneut.";
+            this.snackbarErr = true;
           }
         }
       }

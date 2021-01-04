@@ -240,6 +240,10 @@ export default {
   },
 
   async created() {
+    if (!this.$store.getters.istEingeloggtLehrerAdmin) {
+      this.$router.push("/Login");
+    }
+    
     try {
       const response = await GetData.getLehrer();
       this.lehrer = response.result;
